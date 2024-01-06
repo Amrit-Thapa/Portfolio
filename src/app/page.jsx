@@ -1,24 +1,19 @@
-"use client";
+import Introduction from "./components/Introduction";
+import Contact from "./components/Contact";
+import ResumeTimeLine from "./components/ResumeTimeLine";
+import Skills from "./components/Skills";
+import AboutMe from "./components/AboutMe";
+
 const page = () => {
   return (
     <>
-      <div className="intro" >
-        introduction
-      </div>
-      <div className="scroll-animate exp" >
-        work experience.
-      </div>
-      <div className="scroll-animate edu" >
-        education
-      </div>
-      <div className="scroll-animate skill" >
-        skills
-      </div>
-      <div className="scroll-animate contact" >
-        contact section
-      </div>
+      <Introduction />
+      <AboutMe />
+      <ResumeTimeLine />
+      <Skills />
+      <Contact />
     </>
-  )
-}
+  );
+};
 
 export default page;
