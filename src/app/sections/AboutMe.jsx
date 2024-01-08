@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import {Twitter, Linkedin, Github} from "lucide-react";
+import SectionHead from "../components/SectionHead";
+import SectionContainer from "../components/SectionContainer";
+import SectionBody, {SubHeading, Paragraph} from "../components/SectionBody";
 
 const aboutMeSection = {
   "Full Name": "Amrit Thapa",
@@ -11,11 +14,9 @@ const aboutMeSection = {
 
 const AboutMe = () => {
   return (
-    <div className="p-2 flex flex-col items-center">
-      <div className="flex items-center justify-center text-5xl md:text-4xl p-4 min-h-[140px]">
-        About Me
-      </div>
-      <div className="flex gap-14 max-w-[1140px] p-3 flex-wrap md:flex-nowrap">
+    <SectionContainer>
+      <SectionHead>About Me</SectionHead>
+      <SectionBody>
         <div>
           {Object.keys(aboutMeSection).map((item, index) => {
             return (
@@ -29,15 +30,15 @@ const AboutMe = () => {
           })}
         </div>
         <div>
-          <h1 className="text-3xl pb-5">Hello There!</h1>
-          <p className="leading-7 pb-3">
+          <SubHeading>Hello There!</SubHeading>
+          <Paragraph>
             As a frontend developer, I excels in building intuitive interfaces
             and elevating user experiences. i have implemented a monorepository
             architecture and microservice structure, developed admin dashboards
             which handles key business operations, and enhancing SEO score of
             the product notably increasing organic traffic. i have also worked
             on converting applications into PWAs.
-          </p>
+          </Paragraph>
           <div className="flex gap-3">
             <Github
               onClick={() => console.log}
@@ -56,8 +57,8 @@ const AboutMe = () => {
             />
           </div>
         </div>
-      </div>
-    </div>
+      </SectionBody>
+    </SectionContainer>
   );
 };
 
