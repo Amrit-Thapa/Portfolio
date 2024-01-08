@@ -1,8 +1,8 @@
-import Introduction from "./components/Introduction";
-import Contact from "./components/Contact";
-import ResumeTimeLine from "./components/ResumeTimeLine";
-import Skills from "./components/Skills";
-import AboutMe from "./components/AboutMe";
+import Introduction from "./sections/Introduction";
+import Contact from "./sections/Contact";
+import ResumeTimeLine from "./sections/ResumeTimeLine";
+import Skills from "./sections/Skills";
+import AboutMe from "./sections/AboutMe";
 
 const page = () => {
   return (
