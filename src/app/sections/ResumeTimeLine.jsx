@@ -65,10 +65,10 @@ const TimeLineSection = ({right, children}) => {
   return (
     <div
       className={classNames(
-        "md:w-2/4 relative ml-2 px-10 md:py-12 first:pt-10 last:pb-10",
+        "md:w-2/4 relative ml-4 md:ml-0 p-10 md:py-0 first:pt-10 last:pb-10 border-l-2",
         {
-          "md:!left-[calc(50%-2px)] !text-left md:border-l-2": right,
-          "md:!text-right md:border-r-2": !right,
+          "md:!left-[calc(50%-2px)]  md:border-l-2 md:border-r-0": right,
+          "md:text-right md:border-r-2 md:border-l-0": !right,
         },
       )}
     >
@@ -87,19 +87,22 @@ const TimeSection = () => {
             const right = index % 2 !== 0;
             return (
               <TimeLineSection key={item} right={right}>
+                <Briefcase
+                  size={30}
+                  className={classNames(
+                    "absolute top-2/4 bg-white -left-4 w-fit",
+                    {
+                      "md:!-left-4": right,
+                      "md:!left-[34rem]": !right,
+                    },
+                  )}
+                />
                 <TimelineDetails>
                   <SubHeading>{item.title}</SubHeading>
                   <div className="text-[#00000080]">{item.company}</div>
                   <div className="text-[#00000080] pb-4">{item.period}</div>
                   <Paragraph>{item.description}</Paragraph>
                 </TimelineDetails>
-                <Briefcase
-                  size={30}
-                  className={classNames("absolute top-2/4 bg-white", {
-                    "md:!-left-4": right,
-                    "md:!-right-4": !right,
-                  })}
-                />
               </TimeLineSection>
             );
           })}
@@ -110,19 +113,22 @@ const TimeSection = () => {
             const right = index % 2 == 0;
             return (
               <TimeLineSection key={item} right={right}>
+                <GraduationCap
+                  size={30}
+                  className={classNames(
+                    "absolute top-2/4 bg-white -left-4 w-fit",
+                    {
+                      "md:!-left-4": right,
+                      "md:!left-[34rem]": !right,
+                    },
+                  )}
+                />
                 <TimelineDetails>
                   <SubHeading>{item.title}</SubHeading>
                   <div className="text-[#00000080] ">{item.company}</div>
                   <div className="text-[#00000080] pb-4">{item.period}</div>
                   <Paragraph>{item.description}</Paragraph>
                 </TimelineDetails>
-                <GraduationCap
-                  size={30}
-                  className={classNames("absolute top-2/4 bg-white ", {
-                    "md:!-left-4": right,
-                    "md:-right-4": !right,
-                  })}
-                />
               </TimeLineSection>
             );
           })}
