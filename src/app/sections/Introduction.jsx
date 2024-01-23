@@ -1,23 +1,60 @@
-import classNames from "classnames";
+"use client";
 import React from "react";
+import {Kaushan_Script} from "next/font/google";
+import classNames from "classnames";
+import {Twitter, Linkedin, Github, FileText} from "lucide-react";
+
+const kaushan = Kaushan_Script({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
 
 const Introduction = () => {
   return (
-    <div className="w-full">
-      <div
-        className={classNames(
-          "h-[600px] bg-black flex w-screen",
-          "items-center justify-center text-white flex-col",
-        )}
-      >
-        <div className="p-2">
-          <div className="text-3xl text-center lg:text-6xl">Amrit Thapa</div>
-          <div className="text-xs md:text-lg">
-            Software Engineer / Front-end Engineer
-          </div>
+    <div
+      className={classNames(
+        "h-screen bg-black flex w-screen",
+        "items-center justify-center text-white flex-col",
+      )}
+    >
+      <div className="p-2">
+        <div
+          before="-"
+          className={classNames(
+            "text-5xl text-center font-normal lg:text-8xl p-4",
+            "before:content-[attr(before)] after:content-[attr(before)]",
+            kaushan.className,
+          )}
+        >
+          Amrit Thapa
+        </div>
+        <div className="text-xs text-center md:text-lg">
+          Web Developer / Front-end Engineer
+        </div>
+        <div className="flex justify-center w-full gap-3 pt-4">
+          <Github
+            onClick={() => console.log}
+            className="p-2 rounded cursor-pointer hover:border"
+            size={40}
+          />
+          <Linkedin
+            onClick={() => console.log}
+            className="p-2 rounded cursor-pointer hover:border"
+            size={40}
+          />
+          <FileText
+            onClick={() => console.log}
+            className="p-2 rounded cursor-pointer hover:border"
+            size={40}
+          />
+          <Twitter
+            onClick={() => console.log}
+            className="p-2 rounded cursor-pointer hover:border"
+            size={40}
+          />
         </div>
       </div>
-      <div></div>
     </div>
   );
 };
