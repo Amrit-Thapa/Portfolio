@@ -9,7 +9,7 @@ const aboutMeSection = {
   "Full Name": "Amrit Thapa",
   Phone: "+91-9886458098",
   email: "amritthapa966@gmail.com",
-  Address: "Hirandahalli, Bengaluru - 560049",
+  Address: "Bengaluru - 560049",
 };
 
 const AboutMe = () => {
@@ -42,17 +42,17 @@ const AboutMe = () => {
           <div className="flex gap-3">
             <Github
               onClick={() => console.log}
-              className="cursor-pointer hover:shadow rounded p-2 "
+              className="p-2 rounded cursor-pointer hover:shadow "
               size={40}
             />
             <Linkedin
               onClick={() => console.log}
-              className="cursor-pointer hover:shadow rounded p-2 "
+              className="p-2 rounded cursor-pointer hover:shadow "
               size={40}
             />
             <Twitter
               onClick={() => console.log}
-              className="cursor-pointer hover:shadow rounded p-2 "
+              className="p-2 rounded cursor-pointer hover:shadow "
               size={40}
             />
           </div>
