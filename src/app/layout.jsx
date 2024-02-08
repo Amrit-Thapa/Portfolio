@@ -20,7 +20,9 @@ export default function RootLayout({children}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script defer type="text/javascript" src="script.js"></script>
       </Head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true} className="no-scrollbar">
+        {children}
+      </body>
     </html>
   );
 }

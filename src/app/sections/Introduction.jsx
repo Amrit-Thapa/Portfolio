@@ -14,7 +14,7 @@ const Introduction = () => {
   return (
     <div
       className={classNames(
-        "h-screen bg-black flex w-screen",
+        "h-screen bg-black flex w-full",
         "items-center justify-center text-white flex-col",
       )}
     >
