@@ -11,21 +11,21 @@ const WORK_EXPERIENCE = [
     company: "MyShubhLife (Datasings Technologies Pvt Ltd)",
     period: "01/2023 - Present",
     description:
-      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      "Led and managed a team of four members, overseeing code reviews, feature planning, and design reviews. Additionally, contributed to building the UI solution for a Loan Management system. Successfully revamped the frontend to support SaaS, allowing for seamless customization tailored to individual customer needs",
   },
   {
     title: "Software Engineer",
     company: "MyShubhLife (Datasings Technologies Pvt Ltd)",
     period: "06/2021 - 12/2022",
     description:
-      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      "Created multiple internal dashboards to facilitate smooth customer onboarding and ongoing journey. Developed and maintained reusable code libraries, meticulously tracking changes and their impact on existing functionality. Converted a React app into a Progressive Web App (PWA) to deliver an improved cross-platform user experience on Android and web platforms.",
   },
   {
     title: "Technical Intern",
     company: "MyShubhLife (Datasings Technologies Pvt Ltd)",
     period: "02/2021 - 06/2021",
     description:
-      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      "Boosted the SEO score of https://www.myshubhlife.com from 72 to 92, leading to a notable 27% surge in organic search traffic. Achieved through the implementation of on-page optimization tactics, such as meticulous keyword research, meta-tag optimization, and content refinement.",
   },
 ];
 
@@ -34,15 +34,13 @@ const Education = [
     title: "Masters in Computer Applications",
     company: "New Horizon College of engineering",
     period: "07/2018 - 04/2021",
-    description:
-      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    description: "",
   },
   {
     title: "Bachelors in Computer Applications",
     company: "Bangalore University",
     period: "07/2015 - 04/2018",
-    description:
-      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    description: "",
   },
 ];
 
