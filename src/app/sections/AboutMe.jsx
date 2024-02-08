@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {Twitter, Linkedin, Github} from "lucide-react";
+import {FileText, Linkedin, Github} from "lucide-react";
 import SectionHead from "../components/SectionHead";
 import SectionContainer from "../components/SectionContainer";
 import SectionBody, {SubHeading, Paragraph} from "../components/SectionBody";
@@ -32,27 +32,34 @@ const AboutMe = () => {
         <div>
           <SubHeading>Hello There!</SubHeading>
           <Paragraph>
-            As a frontend developer, I excels in building intuitive interfaces
-            and elevating user experiences. i have implemented a monorepository
-            architecture and microservice structure, developed admin dashboards
-            which handles key business operations, and enhancing SEO score of
-            the product notably increasing organic traffic. i have also worked
-            on converting applications into PWAs.
+            Senior Software Engineer with 3 years in fintech, adept at creating
+            web apps from scratch. Specialized in web app optimization, and
+            delivering innovative solutions for real-world challenges. Ready to
+            contribute expertise and drive success in software engineering
           </Paragraph>
           <div className="flex gap-3">
             <Github
-              onClick={() => console.log}
-              className="p-2 rounded cursor-pointer hover:shadow "
+              onClick={() =>
+                window.open("https://github.com/Amrit-Thapa", "_blank")
+              }
+              className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
             <Linkedin
-              onClick={() => console.log}
-              className="p-2 rounded cursor-pointer hover:shadow "
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/thapa-amrit", "_blank")
+              }
+              className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
-            <Twitter
-              onClick={() => console.log}
-              className="p-2 rounded cursor-pointer hover:shadow "
+            <FileText
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1HN46zLCcDOGHAD1eef9woJivIYYdYI8E/view?usp=sharing",
+                  "_blank",
+                )
+              }
+              className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
           </div>

@@ -12,8 +12,9 @@ const Projects = () => {
       <SectionHead>Projects</SectionHead>
       <SectionBody>
         <div className="flex justify-center w-full">
-          <div className="border rounded-lg shadow">
+          <div className="pt-10 border rounded-lg shadow">
             <Image
+              className="cursor-pointer"
               src={TaskLogo}
               alt="task=tracker"
               height={250}
