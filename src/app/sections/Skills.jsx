@@ -40,42 +40,45 @@ const Skills = () => {
         <div
           className={classNames(
             "flex flex-wrap justify-center w-full text-center md:gap-20",
-            {"animate-slideIn": isSkillVisible}
+            {"animate-slideIn": isSkillVisible},
           )}
           ref={skillRef}
         >
+          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
+            <Image src={typescriptLogo} alt="typescript" /> TypeScript
+          </SkillIconContainer>
           <SkillIconContainer>
-            <Image src={reactLogo} alt="react" />
+            <Image src={reactLogo} alt="react" /> React
+          </SkillIconContainer>
+          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
+            <Image src={nextjsLogo} alt="tailwindLogo" /> Next.js
+          </SkillIconContainer>
+          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
+            <Image src={reduxLogo} alt="redux" /> Redux
           </SkillIconContainer>
           <SkillIconContainer>
-            <Image src={jsLogo} alt="js" />
+            <Image src={jsLogo} alt="js" /> JavaScript
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={reduxLogo} alt="redux" />
+            <Image src={tailwindLogo} alt="tailwindLogo" /> Tailwind
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={typescriptLogo} alt="typescript" />
-          </SkillIconContainer>
-          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={tailwindLogo} alt="tailwindLogo" />
-          </SkillIconContainer>
-          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={htmlLogo} alt="htmlLogo" />
+            <Image src={htmlLogo} alt="htmlLogo" /> HTML5
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
             <Image src={css3Logo} alt="css3Logo" />
-          </SkillIconContainer>
-          <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={nextjsLogo} alt="tailwindLogo" />
+            Css3
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
             <Image src={nodejsLogo} alt="tailwindLogo" />
+            Node
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
             <Image src={sassLogo} alt="tailwindLogo" />
+            Saas
           </SkillIconContainer>
           <SkillIconContainer className="p-2 cursor-pointer hover:shadow">
-            <Image src={gitLogo} alt="tailwindLogo" />
+            <Image src={gitLogo} alt="tailwindLogo" /> Github
           </SkillIconContainer>
         </div>
       </SectionBody>
