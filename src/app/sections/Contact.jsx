@@ -4,16 +4,30 @@ import {Download, Linkedin, Mail} from "lucide-react";
 import SectionBody from "../components/SectionBody";
 import SectionContainer from "../components/SectionContainer";
 import SectionHead from "../components/SectionHead";
+import useIntersectionObserver from "../Utility/useIntersectionObserver";
+import classNames from "classnames";
 const aboutMeSection = {
   Name: "Amrit Thapa",
   Phone: "+91-9886458098",
 };
 const Contact = () => {
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+  const [introRef, isIntroVisible] = useIntersectionObserver();
   return (
     <SectionContainer>
-      <SectionHead>Hire Me!</SectionHead>
+      <SectionHead
+        refe={headerRef}
+        className={isHeaderVisible ? "animate-slideIn" : ""}
+      >
+        Hire Me!
+      </SectionHead>
       <SectionBody>
-        <div className="flex justify-center w-full text-2xl">
+        <div
+          className={classNames("flex justify-center w-full text-2xl", {
+            "animate-slideIn": isIntroVisible,
+          })}
+          ref={introRef}
+        >
           <div>
             {Object.keys(aboutMeSection).map((item) => {
               return (
