@@ -5,13 +5,28 @@ import SectionBody from "../components/SectionBody";
 import SectionContainer from "../components/SectionContainer";
 import SectionHead from "../components/SectionHead";
 import TaskLogo from "../../../public/images/projects/task-tracker.png";
+import useIntersectionObserver from "../Utility/useIntersectionObserver";
+import classNames from "classnames";
 
 const Projects = () => {
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+  const [projectRef, isProjectVisible] = useIntersectionObserver();
+
   return (
     <SectionContainer>
-      <SectionHead>Projects</SectionHead>
+      <SectionHead
+        refe={headerRef}
+        className={isHeaderVisible ? "animate-slideIn" : ""}
+      >
+        Projects
+      </SectionHead>
       <SectionBody>
-        <div className="flex justify-center w-full">
+        <div
+          ref={projectRef}
+          className={classNames("flex justify-center w-full", {
+            "animate-slideIn": isProjectVisible,
+          })}
+        >
           <div className="pt-10 border rounded-lg shadow">
             <Image
               className="cursor-pointer"

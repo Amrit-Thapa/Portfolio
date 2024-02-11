@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import SectionContainer from "../components/SectionContainer";
@@ -14,6 +15,8 @@ import nextjsLogo from "../../../public/images/nextjs.png";
 import nodejsLogo from "../../../public/images/nodejs.png";
 import sassLogo from "../../../public/images/sass.png";
 import gitLogo from "../../../public/images/github.png";
+import useIntersectionObserver from "../Utility/useIntersectionObserver";
+import classNames from "classnames";
 
 const SkillIconContainer = ({children}) => {
   return (
@@ -22,11 +25,25 @@ const SkillIconContainer = ({children}) => {
 };
 
 const Skills = () => {
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+  const [skillRef, isSkillVisible] = useIntersectionObserver();
+
   return (
     <SectionContainer>
-      <SectionHead>Skills</SectionHead>
+      <SectionHead
+        refe={headerRef}
+        className={isHeaderVisible ? "animate-slideIn" : ""}
+      >
+        Skills
+      </SectionHead>
       <SectionBody>
-        <div className="flex flex-wrap justify-center w-full text-center md:gap-20">
+        <div
+          className={classNames(
+            "flex flex-wrap justify-center w-full text-center md:gap-20",
+            {"animate-slideIn": isSkillVisible}
+          )}
+          ref={skillRef}
+        >
           <SkillIconContainer>
             <Image src={reactLogo} alt="react" />
           </SkillIconContainer>

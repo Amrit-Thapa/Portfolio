@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import {Briefcase, GraduationCap} from "lucide-react";
 import SectionHead from "../components/SectionHead";
 import SectionContainer from "../components/SectionContainer";
 import SectionBody, {SubHeading, Paragraph} from "../components/SectionBody";
 import classNames from "classnames";
+import {twMerge} from "tailwind-merge";
+import useIntersectionObserver from "../Utility/useIntersectionObserver";
 
 const WORK_EXPERIENCE = [
   {
@@ -44,16 +47,26 @@ const Education = [
   },
 ];
 
-const TimeLineHead = ({children}) => {
+const TimeLineHead = ({children, refe, className}) => {
   return (
-    <div className="bg-zinc-200 px-3 rounded text-lg tracking-[5px] md:mx-auto w-fit">
+    <div
+      className={twMerge(
+        className,
+        "bg-zinc-200 px-3 rounded text-lg tracking-[5px] md:mx-auto w-fit",
+      )}
+      ref={refe}
+    >
       {children}
     </div>
   );
 };
 
-const TimeLineItemContainer = ({children}) => {
-  return <div className="relative">{children}</div>;
+const TimeLineItemContainer = ({children, className, refe}) => {
+  return (
+    <div className={twMerge(className, "relative")} ref={refe}>
+      {children}
+    </div>
+  );
 };
 
 const TimelineDetails = ({children}) => {
@@ -76,11 +89,24 @@ const TimeLineSection = ({right, children}) => {
 };
 
 const TimeSection = () => {
+  const [expRef, isExpVisible] = useIntersectionObserver();
+  const [expHeadRef, isExpHeadVisible] = useIntersectionObserver();
+
+  const [eduHeadRef, isEduHeadVisible] = useIntersectionObserver();
+  const [eduRef, isEduVisible] = useIntersectionObserver();
   return (
     <div className="w-full">
       <React.Fragment>
-        <TimeLineHead>WORK EXPERIENCE</TimeLineHead>
-        <TimeLineItemContainer>
+        <TimeLineHead
+          refe={expHeadRef}
+          className={isExpHeadVisible ? "animate-slideIn" : ""}
+        >
+          WORK EXPERIENCE
+        </TimeLineHead>
+        <TimeLineItemContainer
+          className={isExpVisible ? "animate-slideIn" : ""}
+          refe={expRef}
+        >
           {WORK_EXPERIENCE.map((item, index) => {
             const right = index % 2 !== 0;
             return (
@@ -105,8 +131,16 @@ const TimeSection = () => {
             );
           })}
         </TimeLineItemContainer>
-        <TimeLineHead>EDUCATION</TimeLineHead>
-        <TimeLineItemContainer>
+        <TimeLineHead
+          refe={eduRef}
+          className={isEduHeadVisible ? "animate-slideIn" : ""}
+        >
+          EDUCATION
+        </TimeLineHead>
+        <TimeLineItemContainer
+          className={isEduVisible ? "animate-slideIn" : ""}
+          refe={eduRef}
+        >
           {Education.map((item, index) => {
             const right = index % 2 == 0;
             return (
@@ -137,9 +171,16 @@ const TimeSection = () => {
 };
 
 const ResumeTimeLine = () => {
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+
   return (
     <SectionContainer>
-      <SectionHead>My Resume</SectionHead>
+      <SectionHead
+        refe={headerRef}
+        className={isHeaderVisible ? "animate-slideIn" : ""}
+      >
+        My Resume
+      </SectionHead>
       <SectionBody>
         <TimeSection />
       </SectionBody>

@@ -38,7 +38,7 @@ const ScrollToTopButton = () => {
       )}
       onClick={scrollToTop}
     >
-      <div className="p-2 bg-black rounded-full md:p-4">
+      <div className="p-2 bg-black rounded-full md:p-4 animate-bounce">
         <MoveUp className="text-white" />
       </div>
     </button>

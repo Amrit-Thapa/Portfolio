@@ -18,7 +18,7 @@ const Introduction = () => {
         "items-center justify-center text-white flex-col",
       )}
     >
-      <div className="p-2">
+      <div className="p-2 animate-fadeIn">
         <div
           before="-"
           className={classNames(

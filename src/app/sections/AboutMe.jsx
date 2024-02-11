@@ -4,6 +4,7 @@ import {FileText, Linkedin, Github} from "lucide-react";
 import SectionHead from "../components/SectionHead";
 import SectionContainer from "../components/SectionContainer";
 import SectionBody, {SubHeading, Paragraph} from "../components/SectionBody";
+import useIntersectionObserver from "../Utility/useIntersectionObserver";
 
 const aboutMeSection = {
   "Full Name": "Amrit Thapa",
@@ -13,11 +14,23 @@ const aboutMeSection = {
 };
 
 const AboutMe = () => {
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+  const [addresRef, isAddressVisible] = useIntersectionObserver();
+  const [introRef, isIntroVisible] = useIntersectionObserver();
+
   return (
     <SectionContainer>
-      <SectionHead>About Me</SectionHead>
+      <SectionHead
+        refe={headerRef}
+        className={isHeaderVisible ? "animate-slideIn" : ""}
+      >
+        About Me
+      </SectionHead>
       <SectionBody>
-        <div>
+        <div
+          ref={addresRef}
+          className={isAddressVisible ? "animate-slideIn" : ""}
+        >
           {Object.keys(aboutMeSection).map((item, index) => {
             return (
               <div key={item} className="flex gap-3 pb-7">
@@ -29,7 +42,7 @@ const AboutMe = () => {
             );
           })}
         </div>
-        <div>
+        <div ref={introRef} className={isIntroVisible ? "animate-slideIn" : ""}>
           <SubHeading>Hello There!</SubHeading>
           <Paragraph>
             Senior Software Engineer with 3 years in fintech, adept at creating
