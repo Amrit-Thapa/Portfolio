@@ -22,7 +22,7 @@ const Projects = () => {
       </SectionHead>
       <SectionBody>
         <div
-          ref={projectRef}
+          ref={projectRef as React.LegacyRef<HTMLDivElement>}
           className={classNames("flex justify-center w-full", {
             "animate-slideIn": isProjectVisible,
           })}

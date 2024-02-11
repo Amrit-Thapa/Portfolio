@@ -132,7 +132,7 @@ const TimeSection = () => {
           })}
         </TimeLineItemContainer>
         <TimeLineHead
-          refe={eduRef}
+          refe={eduHeadRef}
           className={isEduHeadVisible ? "animate-slideIn" : ""}
         >
           EDUCATION
