@@ -3,6 +3,7 @@ import React from "react";
 import {Kaushan_Script} from "next/font/google";
 import classNames from "classnames";
 import {Linkedin, Github, FileText} from "lucide-react";
+import {GITHUB, LINKEDIN, RESUME} from "../Utility";
 
 const kaushan = Kaushan_Script({
   weight: ["400"],
@@ -34,26 +35,17 @@ const Introduction = () => {
         </div>
         <div className="flex justify-center w-full gap-3 pt-4">
           <Github
-            onClick={() =>
-              window.open("https://github.com/Amrit-Thapa", "_blank")
-            }
+            onClick={() => window.open(GITHUB, "_blank")}
             className="p-2 rounded cursor-pointer hover:border"
             size={40}
           />
           <Linkedin
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/thapa-amrit", "_blank")
-            }
+            onClick={() => window.open(LINKEDIN, "_blank")}
             className="p-2 rounded cursor-pointer hover:border"
             size={40}
           />
           <FileText
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1HN46zLCcDOGHAD1eef9woJivIYYdYI8E/view?usp=sharing",
-                "_blank",
-              )
-            }
+            onClick={() => window.open(RESUME, "_blank")}
             className="p-2 rounded cursor-pointer hover:border"
             size={40}
           />
