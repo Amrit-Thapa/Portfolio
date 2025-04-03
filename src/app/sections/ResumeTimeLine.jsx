@@ -99,18 +99,18 @@ const TimeSection = () => {
       <React.Fragment>
         <TimeLineHead
           refe={expHeadRef}
-          className={isExpHeadVisible ? "animate-slideIn" : ""}
+          className={isExpHeadVisible && "animate-slideIn"}
         >
           WORK EXPERIENCE
         </TimeLineHead>
         <TimeLineItemContainer
-          className={isExpVisible ? "animate-slideIn" : ""}
+          className={isExpVisible && "animate-slideIn"}
           refe={expRef}
         >
           {WORK_EXPERIENCE.map((item, index) => {
             const right = index % 2 !== 0;
             return (
-              <TimeLineSection key={item} right={right}>
+              <TimeLineSection key={item.title} right={right}>
                 <Briefcase
                   size={30}
                   className={classNames(
@@ -133,18 +133,18 @@ const TimeSection = () => {
         </TimeLineItemContainer>
         <TimeLineHead
           refe={eduHeadRef}
-          className={isEduHeadVisible ? "animate-slideIn" : ""}
+          className={isEduHeadVisible && "animate-slideIn"}
         >
           EDUCATION
         </TimeLineHead>
         <TimeLineItemContainer
-          className={isEduVisible ? "animate-slideIn" : ""}
+          className={isEduVisible && "animate-slideIn"}
           refe={eduRef}
         >
           {Education.map((item, index) => {
             const right = index % 2 == 0;
             return (
-              <TimeLineSection key={item} right={right}>
+              <TimeLineSection key={item.title} right={right}>
                 <GraduationCap
                   size={30}
                   className={classNames(
@@ -177,7 +177,7 @@ const ResumeTimeLine = () => {
     <SectionContainer>
       <SectionHead
         refe={headerRef}
-        className={isHeaderVisible ? "animate-slideIn" : ""}
+        className={isHeaderVisible && "animate-slideIn"}
       >
         My Resume
       </SectionHead>
