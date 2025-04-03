@@ -13,3 +13,14 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+/* Hides the scrollbar but allows scrolling */
+html,
+body {
+  overflow: scroll; /* Allows scrolling */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar for Webkit-based browsers (Chrome, Safari, Edge) */
+}

@@ -6,6 +6,7 @@ import SectionContainer from "../components/SectionContainer";
 import SectionHead from "../components/SectionHead";
 import useIntersectionObserver from "../Utility/useIntersectionObserver";
 import classNames from "classnames";
+import {LINKEDIN, RESUME} from "../Utility";
 const aboutMeSection = {
   Name: "Amrit Thapa",
   Phone: "+91-9886458098",
@@ -37,24 +38,21 @@ const Contact = () => {
                 </div>
               );
             })}
-            <div className="text-center flex gap-4">
-              <a
-                href="https://drive.google.com/file/d/1HN46zLCcDOGHAD1eef9woJivIYYdYI8E/preview"
-                target="_blank"
-              >
-                <button className="border-2  py-1 px-4 rounded-lg hover:scale-110 transition text-center">
+            <div className="flex gap-4 text-center">
+              <a href={RESUME} target="_blank">
+                <button className="px-4 py-1 text-center transition border-2 rounded-lg hover:scale-110">
                   <Download />
                   Resume
                 </button>
               </a>
               <a href="mailto:amritthapa966@gmail.com">
-                <button className="border-2  py-1 px-4 rounded-lg hover:scale-110 transition text-center">
+                <button className="px-4 py-1 text-center transition border-2 rounded-lg hover:scale-110">
                   <Mail />
                   E-Mail
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/thapa-amrit" target="_blank">
-                <button className="border-2  py-1 px-4 rounded-lg hover:scale-110 transition text-center">
+              <a href={LINKEDIN} target="_blank">
+                <button className="px-4 py-1 text-center transition border-2 rounded-lg hover:scale-110">
                   <Linkedin />
                   Linked
                 </button>

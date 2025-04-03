@@ -5,6 +5,7 @@ import SectionHead from "../components/SectionHead";
 import SectionContainer from "../components/SectionContainer";
 import SectionBody, {SubHeading, Paragraph} from "../components/SectionBody";
 import useIntersectionObserver from "../Utility/useIntersectionObserver";
+import {GITHUB, LINKEDIN, RESUME} from "../Utility";
 
 const aboutMeSection = {
   "Full Name": "Amrit Thapa",
@@ -45,33 +46,24 @@ const AboutMe = () => {
         <div ref={introRef} className={isIntroVisible ? "animate-slideIn" : ""}>
           <SubHeading>Hello There!</SubHeading>
           <Paragraph>
-            Senior Software Engineer with 3 years in fintech, adept at creating
-            web apps from scratch. Specialized in web app optimization, and
-            delivering innovative solutions for real-world challenges. Ready to
-            contribute expertise and drive success in software engineering
+            Senior Software Engineer with 4+ years of Experience, adept at
+            creating web apps from scratch. Specialized in web app optimization,
+            and delivering innovative solutions for real-world challenges. Ready
+            to contribute expertise and drive success in software engineering
           </Paragraph>
           <div className="flex gap-3">
             <Github
-              onClick={() =>
-                window.open("https://github.com/Amrit-Thapa", "_blank")
-              }
+              onClick={() => window.open(GITHUB, "_blank")}
               className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
             <Linkedin
-              onClick={() =>
-                window.open("https://www.linkedin.com/in/thapa-amrit", "_blank")
-              }
+              onClick={() => window.open(LINKEDIN, "_blank")}
               className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
             <FileText
-              onClick={() =>
-                window.open(
-                  "https://drive.google.com/file/d/1HN46zLCcDOGHAD1eef9woJivIYYdYI8E/view?usp=sharing",
-                  "_blank",
-                )
-              }
+              onClick={() => window.open(RESUME, "_blank")}
               className="p-2 rounded cursor-pointer hover:shadow"
               size={40}
             />
